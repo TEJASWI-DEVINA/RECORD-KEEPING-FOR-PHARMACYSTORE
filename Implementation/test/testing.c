@@ -38,15 +38,17 @@ int main()
 /* Initiate the Unity Test Framework */
   UNITY_BEGIN();
   int a;
-  char username[1000];
-    char password[1000];
+  //char username[1000];
+    char password[10];
 
 
     printf("Enter your username:\t");
-    scanf("%s",&username);
+ char username[20];
+    scanf("%10s",&username);
 
     printf("Enter your password:\t");
-    scanf("%s",&password);
+ char password[17];
+    scanf("%16s",&password);
 
     if(strcmp(username,"medical_store")==0){
         if(strcmp(password,"password")==0){
