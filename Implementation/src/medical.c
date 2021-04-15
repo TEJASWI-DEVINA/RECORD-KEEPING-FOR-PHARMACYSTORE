@@ -168,7 +168,7 @@ void ChangeMedicineDetails(int number)
          strcpy(m[i].info,info);
          printf("Info changed Successfully\n");
         }
-        if(choice<=0 && choice>7)
+        if(choice<=0 || choice>7)
         {
          printf("Enter valid Choice\n");
         }
