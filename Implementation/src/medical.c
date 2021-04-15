@@ -286,7 +286,7 @@ void KnowInfoAboutMedicine(int number){
  void PurchaseMedicine(int number)
  {
   int id,check,i,quantity,flag=0;
-  char name[100];
+  //char name[100];
   printf("Enter 1 if you know ID else any other number to enter Name of Medicine\n");
   //fflush(stdin);
   scanf("%d",&check);
@@ -338,6 +338,7 @@ void KnowInfoAboutMedicine(int number){
   }
   else
   {
+     char name[100];
    printf("Enter Name to search and Purchase\n");
   // fflush(stdin);
    gets(name);
