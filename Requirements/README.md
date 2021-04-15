@@ -1,5 +1,5 @@
-######Requirements
-####Hardware requirements
+######Requirements<h6>
+####Hardware requirements<h4>
 
 - Ram 512MB or higher.
 - Minimum 10MB hard disk space.
@@ -7,14 +7,14 @@
 - Processor speed 1.7 GHz
 
 
-####Software requirements
+####Software requirements<h4>
 
-● Windows 8 or higher versions.
-● Visual Studio/CodeBlocks software.
-● C language
-● Mingw compiler
+- Windows 8 or higher versions.
+- Visual Studio/CodeBlocks software.
+- C language
+- Mingw compiler
 
-####Functional requirements
+####Functional requirements<h4>
 The management system must include the following features like:
 ● Login system
 Using this module user enters the user name and password and the system checks whether it is valid. If it is the valid user can log in, otherwise invalid user name and password message is displayed
