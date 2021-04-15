@@ -186,6 +186,7 @@ int DeleteMedicineStore(int number)
   printf("Enter Id to be deleted\n");
   //fflush(stdin);
   scanf("%d",&id);
+   id=0;
   for(i=0;i<number;i++)
   {
    if(m[i].id==id)
