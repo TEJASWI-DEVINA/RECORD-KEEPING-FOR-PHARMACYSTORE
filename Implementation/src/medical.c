@@ -199,7 +199,7 @@ int DeleteMedicineStore(int number)
     strcpy(m[i].Mfg_Date,"");
     strcpy(m[i].Exp_Date,"");
     strcpy(m[i].info,"");
-    num=i;
+    //num=i;
     break;
    }
   }
