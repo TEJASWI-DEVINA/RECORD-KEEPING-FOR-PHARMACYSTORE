@@ -2,7 +2,7 @@
 #include<stdio.h>
 #include<string.h>
 
-   void menu()
+   void menutab()
    {
     int choice,number=0,c;
    do{
@@ -19,38 +19,38 @@
    {
       case 1:
     {
-     PurchaseMedicine(number+1);
+     Purchase(number+1);
      break;
     }
       case 2:
     {
-     EnterInfoAboutMedicine(number+1);
+     EnterInfo(number+1);
      break;
     }
       case 3:
       {
-       StockOfMedicine(number+1);
+       Stock(number+1);
        break;
       }
       case 4:
       {
-       KnowInfoAboutMedicine(number+1);
+       KnowInfo(number+1);
        break;
       }
       case 5:
       {
        ++number;
-       AddMedicineinStore(number,m);
+       Add(number,b);
        break;
       }
       case 6:
       {
-       DeleteMedicineStore(number+1);
+       Delete(number+1);
        break;
       }
       case 7:
       {
-       ChangeMedicineDetails(number+1);
+       ChangeDetails(number+1);
        break;
       }
    }
@@ -62,43 +62,43 @@
  }
 
 
-void AddMedicineinStore(int number,struct Medicine m[])
+void Add(int number,struct Med b[])
  {
   char name[100];
   printf("Enter Medicine Id\n");
-  scanf("%d",&(m[number].id));
+  scanf("%d",&(b[number].id));
   //fflush(stdin);
   printf("Enter Medicine Name\n");
   //fflush(stdin);
   scanf("%s",name);
-  strcpy(m[number].medicneName,name);
+  strcpy(b[number].medicneName,name);
   printf("Enter Company Name\n");
   //fflush(stdin);
-  scanf("%s",m[number].Company);
+  scanf("%s",b[number].Company);
   printf("Enter Manufactured Date\n");
   //fflush(stdin);
-  gets(m[number].Mfg_Date);
+  gets(b[number].Mfg_Date);
   printf("Enter Expiry Date\n");
   //fflush(stdin);
-  gets(m[number].Exp_Date);
+  gets(b[number].Exp_Date);
   printf("Enter Quantity\n");
   //fflush(stdin);
-  scanf("%d",&(m[number].quantity));
+  scanf("%d",&(b[number].quantity));
   printf("Enter Price\n");
   //fflush(stdin);
-  scanf("%d",&(m[number].price));
-  strcpy(m[number].info,"");
-  printf("Medicine with id %d Added Successfully\n",m[number].id);
+  scanf("%d",&(b[number].price));
+  strcpy(b[number].info,"");
+  printf("Medicine with id %d Added Successfully\n",b[number].id);
   
  }
-void ChangeMedicineDetails(int number)
+void ChangeDetails(int number)
  {
   int id,quantity,choice,c,i;
   printf("Enter id to change Details\n");
   scanf("%d",&id);
   for(i=0;i<number;i++)
   {
-   if(m[i].id==id && m[i].id!=0)
+   if(b[i].id==id && b[i].id!=0)
    {
     do
     {
@@ -110,7 +110,7 @@ void ChangeMedicineDetails(int number)
          printf("Enter Quantity to be changed\n");
          //fflush(stdin);
          scanf("%d",&quantity);
-         m[i].quantity=quantity;
+         b[i].quantity=quantity;
          printf("Quantity changed Successfully\n");
         }
         if(choice==2)
@@ -120,7 +120,7 @@ void ChangeMedicineDetails(int number)
          printf("Enter Price to be changed\n");
          //fflush(stdin);
          scanf("%d",&price);
-         m[i].price=price;
+         b[i].price=price;
          printf("Price changed Successfully\n");
         }
         if(choice==3)
@@ -129,7 +129,7 @@ void ChangeMedicineDetails(int number)
          printf("Enter Name to be changed\n");
         // fflush(stdin);
          gets(name);
-         strcpy(m[i].medicneName,name);
+         strcpy(b[i].medicneName,name);
          printf("Medicine Name changed Successfully\n");
         }
         if(choice==4)
@@ -138,7 +138,7 @@ void ChangeMedicineDetails(int number)
          printf("Enter company to be changed\n");
         // fflush(stdin);
          gets(company);
-         strcpy(m[i].Company,company);
+         strcpy(b[i].Company,company);
          printf("Company changed Successfully\n");
         }
         if(choice==5)
@@ -147,7 +147,7 @@ void ChangeMedicineDetails(int number)
          printf("Enter Manufacturing date to be changed\n");
          //fflush(stdin);
          gets(mfg);
-         strcpy(m[i].Mfg_Date,mfg);
+         strcpy(b[i].Mfg_Date,mfg);
          printf("Manufacturing Date changed Successfully\n");
         }
         if(choice==6)
@@ -156,7 +156,7 @@ void ChangeMedicineDetails(int number)
          printf("Enter Expiry date to be changed\n");
          //fflush(stdin);
          gets(exp);
-         strcpy(m[i].Exp_Date,exp);
+         strcpy(b[i].Exp_Date,exp);
          printf("Expiry Date changed Successfully\n");
         }
         if(choice==7)
@@ -165,7 +165,7 @@ void ChangeMedicineDetails(int number)
          printf("Enter Info to be changed(Less than 100 Characters)\n");
         // fflush(stdin);
          gets(info);
-         strcpy(m[i].info,info);
+         strcpy(b[i].info,info);
          printf("Info changed Successfully\n");
         }
         if(choice<=0 || choice>7)
@@ -180,7 +180,7 @@ void ChangeMedicineDetails(int number)
     break;
    }
   }}
-int DeleteMedicineStore(int number)
+int Delete(int number)
  {
   int id,i,flag=0,num;
   printf("Enter Id to be deleted\n");
@@ -189,17 +189,17 @@ int DeleteMedicineStore(int number)
    id=0;
   for(i=0;i<number;i++)
   {
-   if(m[i].id==id)
+   if(b[i].id==id)
    {
     flag=1;
-    m[i].id=0;
-    m[i].price=0;
-    m[i].quantity=0;
-    strcpy(m[i].medicneName,"");
-    strcpy(m[i].Company,"");
-    strcpy(m[i].Mfg_Date,"");
-    strcpy(m[i].Exp_Date,"");
-    strcpy(m[i].info,"");
+    b[i].id=0;
+    b[i].price=0;
+    b[i].quantity=0;
+    strcpy(b[i].medicneName,"");
+    strcpy(b[i].Company,"");
+    strcpy(b[i].Mfg_Date,"");
+    strcpy(b[i].Exp_Date,"");
+    strcpy(b[i].info,"");
     //num=i;
     break;
    }
@@ -212,7 +212,7 @@ int DeleteMedicineStore(int number)
    return 0;
  }
 
- int EnterInfoAboutMedicine(int number)
+ int EnterInfo(int number)
  {
   int i,flag=0,c;
   char name[100],info[100];
@@ -221,12 +221,12 @@ int DeleteMedicineStore(int number)
   gets(name);
   for(i=0;i<number;i++)
   {
-   if(strcmp(m[i].medicneName,name)==0)
+   if(strcmp(b[i].medicneName,name)==0)
    {
     flag=1;
     printf("These are the details of Medicine\n");
-    printf("Name=%s\nPrice=%d\nAvailable Quantity=%d\nCompany=%s\nMfg Date=%s\nExp Date=%s\n",m[i].medicneName,m[i].price,m[i].quantity,m[i].Company,m[i].Mfg_Date,m[i].Exp_Date);
-    if(strcmp(m[i].info,"")!=0)
+    printf("Name=%s\nPrice=%d\nAvailable Quantity=%d\nCompany=%s\nMfg Date=%s\nExp Date=%s\n",b[i].medicneName,b[i].price,b[i].quantity,b[i].Company,b[i].Mfg_Date,b[i].Exp_Date);
+    if(strcmp(b[i].info,"")!=0)
     {
      printf("Review Already Available!\nIf you want to Add a Review Enter 1 else Any other number\n");
     // fflush(stdin);
@@ -236,15 +236,15 @@ int DeleteMedicineStore(int number)
     {
      printf("Enter review(less than 100 Characters)\n");
     // fflush(stdin);
-     gets(m[i].info);
+     gets(b[i].info);
     }
     if(c==1)
     {
      printf("Enter review(less than 100 Characters)\n");
     // fflush(stdin);
      gets(info);
-     strcat(m[i].info,"; ");
-     strcat(m[i].info,info);
+     strcat(b[i].info,"; ");
+     strcat(b[i].info,info);
      return 1;
     }
 
@@ -256,7 +256,7 @@ int DeleteMedicineStore(int number)
    return 0;
   }
  }
-void KnowInfoAboutMedicine(int number){
+void KnowInfo(int number){
    int i,flag=0;
   char name[100];
   printf("Enter Name of the medicine you want to see Review and Info\n");
@@ -264,14 +264,14 @@ void KnowInfoAboutMedicine(int number){
   gets(name);
   for(i=0;i<number;i++)
   {
-   if(strcmp(m[i].medicneName,name)==0)
+   if(strcmp(b[i].medicneName,name)==0)
    {
     flag=1;
     printf("These are the details of Medicine\n");
-    printf("Name=%s\nPrice=%d\nAvailable Quantity=%d\nCompany=%s\nMfg Date=%s\nExp Date=%s\n",m[i].medicneName,m[i].price,m[i].quantity,m[i].Company,m[i].Mfg_Date,m[i].Exp_Date);
-    if(strcmp(m[i].info,"")!=0)
+    printf("Name=%s\nPrice=%d\nAvailable Quantity=%d\nCompany=%s\nMfg Date=%s\nExp Date=%s\n",b[i].medicneName,b[i].price,b[i].quantity,b[i].Company,b[i].Mfg_Date,b[i].Exp_Date);
+    if(strcmp(b[i].info,"")!=0)
     {
-     printf("Review or Info=%s\n",m[i].info);
+     printf("Review or Info=%s\n",b[i].info);
     }
     else
     {
@@ -284,7 +284,7 @@ void KnowInfoAboutMedicine(int number){
    printf("Entered Name Not Found\n");
   }
  }
- void PurchaseMedicine(int number)
+ void Purchase(int number)
  {
   int id,check,i,quantity,flag=0;
   //char name[100];
@@ -298,31 +298,31 @@ void KnowInfoAboutMedicine(int number){
    scanf("%d",&id);
    for(i=0;i<number;i++)
    {
-    if(m[i].id==id)
+    if(b[i].id==id)
     {
      flag=1;
      int c;
      printf("These are the details of Medicine\n");
-     printf("Name%s\nPrice=%d\nAvailable Quantity=%d\nCompany=%s\nMfg Date=%s\nExp Date=%s\n",m[i].medicneName,m[i].price,m[i].quantity,m[i].Company,m[i].Mfg_Date,m[i].Exp_Date);
-      if(strcmp(m[i].info,"")==0)
+     printf("Name%s\nPrice=%d\nAvailable Quantity=%d\nCompany=%s\nMfg Date=%s\nExp Date=%s\n",b[i].medicneName,b[i].price,b[i].quantity,b[i].Company,b[i].Mfg_Date,b[i].Exp_Date);
+      if(strcmp(b[i].info,"")==0)
       {
        printf("Medicine Review/Info=Not Available\n");
       }
       else
       {
-       printf("Medicine Review/Info=%s\n",m[i].info);
+       printf("Medicine Review/Info=%s\n",b[i].info);
       }
-     printf("Do you want to purchase %s \nIf Yes Enter 1 else any other number\n",m[i].medicneName);
+     printf("Do you want to purchase %s \nIf Yes Enter 1 else any other number\n",b[i].medicneName);
      //fflush(stdin);
      scanf("%d",&c);
      if(c==1)
      {
       printf("Enter Quantity to Purchase\n");
       scanf("%d",&quantity);
-      if(m[i].quantity>quantity)
+      if(b[i].quantity>quantity)
       {
-        m[i].quantity-=quantity;
-       printf("Total Price to be paid=%d\n",quantity*m[i].price);
+        b[i].quantity-=quantity;
+       printf("Total Price to be paid=%d\n",quantity*b[i].price);
 
       }
       else{
@@ -345,30 +345,30 @@ void KnowInfoAboutMedicine(int number){
    gets(name);
    for(i=0;i<number;i++)
    {
-    if(strcmp(m[i].medicneName,name)==0)
+    if(strcmp(b[i].medicneName,name)==0)
     {
      flag=1;
      int c;
      printf("These are the details of Medicine\n");
-     printf("Name=%s\nPrice=%d\nAvailable Quantity=%d\nCompany=%s\nMfg Date=%s\nExp Date=%s\n",m[i].medicneName,m[i].price,m[i].quantity,m[i].Company,m[i].Mfg_Date,m[i].Exp_Date);
-      if(strcmp(m[i].info,"")==0)
+     printf("Name=%s\nPrice=%d\nAvailable Quantity=%d\nCompany=%s\nMfg Date=%s\nExp Date=%s\n",b[i].medicneName,b[i].price,b[i].quantity,b[i].Company,b[i].Mfg_Date,b[i].Exp_Date);
+      if(strcmp(b[i].info,"")==0)
       {
        printf("Medicine Review/Info=Not Available\n");
       }
       else
       {
-       printf("Medicine Review/Info=%s\n",m[i].info);
+       printf("Medicine Review/Info=%s\n",b[i].info);
       }
-     printf("Do you want to purchase %s \nIf Yes Enter 1 else any other number\n",m[i].medicneName);
+     printf("Do you want to purchase %s \nIf Yes Enter 1 else any other number\n",b[i].medicneName);
      //fflush(stdin);
      scanf("%d",&c);
      if(c==1)
      {
       printf("Enter Quantity to Purchase\n");
       scanf("%d",&quantity);
-      if(m[i].quantity>quantity)
+      if(b[i].quantity>quantity)
       {
-       printf("Total Price to be paid=%d\n",quantity*m[i].price);
+       printf("Total Price to be paid=%d\n",quantity*b[i].price);
       }
       else{
        printf("Please Enter quantity below Available Quantity\n");
@@ -383,18 +383,18 @@ void KnowInfoAboutMedicine(int number){
    }
   }
  }
-int StockOfMedicine(int number){
+int Stock(int number){
   //int i;
   if(number!=0)
   {
       printf("All Available Items are\n");
    for(int i=0;i<number;i++)
    {
-    if(m[i].id!=0){
-    printf("Id=%d\nName=%s\t\tPrice=%d\tAvailable Quantity=%d\nCompany=%s\t\tMfg Date=%s\tExp Date=%s\n",m[i].id,m[i].medicneName,m[i].price,m[i].quantity,m[i].Company,m[i].Mfg_Date,m[i].Exp_Date);
-    if(strcmp(m[i].info,"")!=0)
+    if(b[i].id!=0){
+    printf("Id=%d\nName=%s\t\tPrice=%d\tAvailable Quantity=%d\nCompany=%s\t\tMfg Date=%s\tExp Date=%s\n",b[i].id,b[i].medicneName,b[i].price,b[i].quantity,b[i].Company,b[i].Mfg_Date,b[i].Exp_Date);
+    if(strcmp(b[i].info,"")!=0)
     {
-     printf("Review or Info=%s\n",m[i].info);
+     printf("Review or Info=%s\n",b[i].info);
     }
     else
     {
