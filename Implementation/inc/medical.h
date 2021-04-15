@@ -13,7 +13,7 @@ struct Med{
    int id,price,quantity;
    char medicneName[100],Company[100],Mfg_Date[11],Exp_Date[11],info[5000];
   }b[100];
-void Add(int number,struct Medicine b[]);
+void Add(int number,struct Med b[]);
 
 
 
