@@ -39,16 +39,16 @@ int main()
   UNITY_BEGIN();
   int a;
   //char username[1000];
-    //char password[10];
+   //char password[10];
 
 
     printf("Enter your username:\t");
  char username[20];
-    scanf("%19s",&username);
+    scanf("%19s",username);
 
     printf("Enter your password:\t");
  char password[10];
-    scanf("%9s",&password);
+    scanf("%9s",password);
 
     if(strcmp(username,"medical_store")==0){
         if(strcmp(password,"password")==0){
