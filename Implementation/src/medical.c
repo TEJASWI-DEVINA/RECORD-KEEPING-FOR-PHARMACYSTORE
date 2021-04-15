@@ -70,11 +70,11 @@ void AddMedicineinStore(int number,struct Medicine m[])
   //fflush(stdin);
   printf("Enter Medicine Name\n");
   //fflush(stdin);
-  fgets(name);
+  scanf("%s",name);
   strcpy(m[number].medicneName,name);
   printf("Enter Company Name\n");
   //fflush(stdin);
-  gets(m[number].Company);
+  scanf("%s",m[number].Company);
   printf("Enter Manufactured Date\n");
   //fflush(stdin);
   gets(m[number].Mfg_Date);
