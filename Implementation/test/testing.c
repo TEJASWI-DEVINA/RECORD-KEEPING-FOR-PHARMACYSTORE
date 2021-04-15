@@ -16,19 +16,19 @@ void tearDown(){}
 
 void test_delete(void)
 {
-  TEST_ASSERT_EQUAL(1,  DeleteMedicineStore(1));
+  TEST_ASSERT_EQUAL(1,  Delete(1));
 
   //TEST_ASSERT_EQUAL(0, div(10, 0));
 }
 void test_stock(void)
 {
-  TEST_ASSERT_EQUAL(0, StockOfMedicine(0));
+  TEST_ASSERT_EQUAL(0, Stock(0));
 
   //TEST_ASSERT_EQUAL(0, div(10, 0));
 }
 void test_enterinfo(void)
 {
-  TEST_ASSERT_EQUAL(1,EnterInfoAboutMedicine(1));
+  TEST_ASSERT_EQUAL(1,EnterInfo(1));
   //TEST_ASSERT_EQUAL(0, div(10, 0));
 }
 
@@ -50,32 +50,32 @@ int main()
  char password[10];
     scanf("%9s",password);
 
-    if(strcmp(username,"medical_store")==0){
-        if(strcmp(password,"password")==0){
+    if(strcmp(username,"teja_medshop")==0){
+        if(strcmp(password,"drowssap")==0){
 
         printf("\nWelcome.Login Success!");
    int i,j;
    for(i=0;i<100;i++)
    {
-    m[i].id=0;
-    m[i].price=0;
-    m[i].quantity=0;
-    strcpy(m[i].Mfg_Date,"");
-    strcpy(m[i].Exp_Date,"");
-    strcpy(m[i].medicneName,"");
-    strcpy(m[i].Company,"");
-    strcpy(m[i].info,"");
+    b[i].id=0;
+    b[i].price=0;
+    b[i].quantity=0;
+    strcpy(b[i].Mfg_Date,"");
+    strcpy(b[i].Exp_Date,"");
+    strcpy(b[i].medicneName,"");
+    strcpy(b[i].Company,"");
+    strcpy(b[i].info,"");
    }
 
-   m[0].id=1;
-   m[0].price=120;
-   m[0].quantity=30;
-   strcpy(m[0].Mfg_Date,"23-04-2016");
-   strcpy(m[0].Exp_Date,"24-04-2020");
-   strcpy(m[0].medicneName,"Paracetmol");
-   strcpy(m[0].Company,"ABCD");
-   strcpy(m[0].info,"Good Medicine for Fever");
-   menu();
+   b[0].id=1;
+   b[0].price=120;
+   b[0].quantity=30;
+   strcpy(b[0].Mfg_Date,"2-3-2020");
+   strcpy(b[0].Exp_Date,"4-5-2100");
+   strcpy(b[0].medicneName,"Paracetmol");
+   strcpy(b[0].Company,"DCBA");
+   strcpy(b[0].info,"Good Medicine");
+   menutab();
           }
         else{
     printf("\nwrong password");
