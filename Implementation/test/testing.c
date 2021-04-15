@@ -38,8 +38,8 @@ int main()
 /* Initiate the Unity Test Framework */
   UNITY_BEGIN();
   int a;
-  char username[15];
-    char password[12];
+  char username[100];
+    char password[100];
 
 
     printf("Enter your username:\t");
