@@ -70,7 +70,7 @@ void AddMedicineinStore(int number,struct Medicine m[])
   //fflush(stdin);
   printf("Enter Medicine Name\n");
   //fflush(stdin);
-  gets(name);
+  fgets(name);
   strcpy(m[number].medicneName,name);
   printf("Enter Company Name\n");
   //fflush(stdin);
