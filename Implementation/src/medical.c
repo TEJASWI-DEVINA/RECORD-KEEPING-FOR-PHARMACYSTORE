@@ -77,10 +77,10 @@ void Add(int number,struct Med b[])
   scanf("%s",b[number].Company);
   printf("Enter Manufactured Date\n");
   //fflush(stdin);
-  gets(b[number].Mfg_Date);
+  fgets(b[number].Mfg_Date);
   printf("Enter Expiry Date\n");
   //fflush(stdin);
-  gets(b[number].Exp_Date);
+  fgets(b[number].Exp_Date);
   printf("Enter Quantity\n");
   //fflush(stdin);
   scanf("%d",&(b[number].quantity));
@@ -128,7 +128,7 @@ void ChangeDetails(int number)
          char name[100];
          printf("Enter Name to be changed\n");
         // fflush(stdin);
-         gets(name);
+         fgets(name);
          strcpy(b[i].medicneName,name);
          printf("Medicine Name changed Successfully\n");
         }
@@ -137,7 +137,7 @@ void ChangeDetails(int number)
          char company[100];
          printf("Enter company to be changed\n");
         // fflush(stdin);
-         gets(company);
+         fgets(company);
          strcpy(b[i].Company,company);
          printf("Company changed Successfully\n");
         }
@@ -146,7 +146,7 @@ void ChangeDetails(int number)
          char mfg[11];
          printf("Enter Manufacturing date to be changed\n");
          //fflush(stdin);
-         gets(mfg);
+         fgets(mfg);
          strcpy(b[i].Mfg_Date,mfg);
          printf("Manufacturing Date changed Successfully\n");
         }
@@ -155,7 +155,7 @@ void ChangeDetails(int number)
          char exp[11];
          printf("Enter Expiry date to be changed\n");
          //fflush(stdin);
-         gets(exp);
+         fgets(exp);
          strcpy(b[i].Exp_Date,exp);
          printf("Expiry Date changed Successfully\n");
         }
@@ -164,7 +164,7 @@ void ChangeDetails(int number)
          char info[100];
          printf("Enter Info to be changed(Less than 100 Characters)\n");
         // fflush(stdin);
-         gets(info);
+         fgets(info);
          strcpy(b[i].info,info);
          printf("Info changed Successfully\n");
         }
@@ -218,7 +218,7 @@ int Delete(int number)
   char name[100],info[100];
   printf("Enter Name of the medicine you want to Review or include Info\n");
   //fflush(stdin);
-  gets(name);
+  fgets(name);
   for(i=0;i<number;i++)
   {
    if(strcmp(b[i].medicneName,name)==0)
@@ -236,13 +236,13 @@ int Delete(int number)
     {
      printf("Enter review(less than 100 Characters)\n");
     // fflush(stdin);
-     gets(b[i].info);
+     fgets(b[i].info);
     }
     if(c==1)
     {
      printf("Enter review(less than 100 Characters)\n");
     // fflush(stdin);
-     gets(info);
+     fgets(info);
      strcat(b[i].info,"; ");
      strcat(b[i].info,info);
      return 1;
@@ -261,7 +261,7 @@ void KnowInfo(int number){
   char name[100];
   printf("Enter Name of the medicine you want to see Review and Info\n");
  // fflush(stdin);
-  gets(name);
+  fgets(name);
   for(i=0;i<number;i++)
   {
    if(strcmp(b[i].medicneName,name)==0)
@@ -342,7 +342,7 @@ void KnowInfo(int number){
      char name[100];
    printf("Enter Name to search and Purchase\n");
   // fflush(stdin);
-   gets(name);
+   fgets(name);
    for(i=0;i<number;i++)
    {
     if(strcmp(b[i].medicneName,name)==0)
