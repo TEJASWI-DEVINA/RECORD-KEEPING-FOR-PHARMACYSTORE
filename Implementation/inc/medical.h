@@ -9,7 +9,7 @@ int Delete(int number);
 void ChangeDetails(int number);
 void menutab();
 
-struct Medicine{
+struct Med{
    int id,price,quantity;
    char medicneName[100],Company[100],Mfg_Date[11],Exp_Date[11],info[5000];
   }b[100];
