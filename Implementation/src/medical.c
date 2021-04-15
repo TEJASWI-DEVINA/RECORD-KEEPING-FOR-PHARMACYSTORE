@@ -67,25 +67,25 @@ void AddMedicineinStore(int number,struct Medicine m[])
   char name[100];
   printf("Enter Medicine Id\n");
   scanf("%d",&(m[number].id));
-  fflush(stdin);
+  //fflush(stdin);
   printf("Enter Medicine Name\n");
-  fflush(stdin);
+  //fflush(stdin);
   gets(name);
   strcpy(m[number].medicneName,name);
   printf("Enter Company Name\n");
-  fflush(stdin);
+  //fflush(stdin);
   gets(m[number].Company);
   printf("Enter Manufactured Date\n");
-  fflush(stdin);
+  //fflush(stdin);
   gets(m[number].Mfg_Date);
   printf("Enter Expiry Date\n");
-  fflush(stdin);
+  //fflush(stdin);
   gets(m[number].Exp_Date);
   printf("Enter Quantity\n");
-  fflush(stdin);
+  //fflush(stdin);
   scanf("%d",&(m[number].quantity));
   printf("Enter Price\n");
-  fflush(stdin);
+  //fflush(stdin);
   scanf("%d",&(m[number].price));
   strcpy(m[number].info,"");
   printf("Medicine with id %d Added Successfully\n",m[number].id);
@@ -108,7 +108,7 @@ void ChangeMedicineDetails(int number)
         {
          int quantity;
          printf("Enter Quantity to be changed\n");
-         fflush(stdin);
+         //fflush(stdin);
          scanf("%d",&quantity);
          m[i].quantity=quantity;
          printf("Quantity changed Successfully\n");
@@ -118,7 +118,7 @@ void ChangeMedicineDetails(int number)
          int price;
 
          printf("Enter Price to be changed\n");
-         fflush(stdin);
+         //fflush(stdin);
          scanf("%d",&price);
          m[i].price=price;
          printf("Price changed Successfully\n");
@@ -127,7 +127,7 @@ void ChangeMedicineDetails(int number)
         {
          char name[100];
          printf("Enter Name to be changed\n");
-         fflush(stdin);
+        // fflush(stdin);
          gets(name);
          strcpy(m[i].medicneName,name);
          printf("Medicine Name changed Successfully\n");
@@ -136,7 +136,7 @@ void ChangeMedicineDetails(int number)
         {
          char company[100];
          printf("Enter company to be changed\n");
-         fflush(stdin);
+        // fflush(stdin);
          gets(company);
          strcpy(m[i].Company,company);
          printf("Company changed Successfully\n");
@@ -145,7 +145,7 @@ void ChangeMedicineDetails(int number)
         {
          char mfg[11];
          printf("Enter Manufacturing date to be changed\n");
-         fflush(stdin);
+         //fflush(stdin);
          gets(mfg);
          strcpy(m[i].Mfg_Date,mfg);
          printf("Manufacturing Date changed Successfully\n");
@@ -154,7 +154,7 @@ void ChangeMedicineDetails(int number)
         {
          char exp[11];
          printf("Enter Expiry date to be changed\n");
-         fflush(stdin);
+         //fflush(stdin);
          gets(exp);
          strcpy(m[i].Exp_Date,exp);
          printf("Expiry Date changed Successfully\n");
@@ -163,7 +163,7 @@ void ChangeMedicineDetails(int number)
         {
          char info[100];
          printf("Enter Info to be changed(Less than 100 Characters)\n");
-         fflush(stdin);
+        // fflush(stdin);
          gets(info);
          strcpy(m[i].info,info);
          printf("Info changed Successfully\n");
@@ -173,7 +173,7 @@ void ChangeMedicineDetails(int number)
          printf("Enter valid Choice\n");
         }
         printf("Enter 1 to Change other Details Else any other number\n");
-        fflush(stdin);
+       // fflush(stdin);
         scanf("%d",&c);
     }while(c==1);
 
@@ -184,7 +184,7 @@ int DeleteMedicineStore(int number)
  {
   int id,i,flag=0,num;
   printf("Enter Id to be deleted\n");
-  fflush(stdin);
+  //fflush(stdin);
   scanf("%d",&id);
   for(i=0;i<number;i++)
   {
@@ -216,7 +216,7 @@ int DeleteMedicineStore(int number)
   int i,flag=0,c;
   char name[100],info[100];
   printf("Enter Name of the medicine you want to Review or include Info\n");
-  fflush(stdin);
+  //fflush(stdin);
   gets(name);
   for(i=0;i<number;i++)
   {
@@ -228,19 +228,19 @@ int DeleteMedicineStore(int number)
     if(strcmp(m[i].info,"")!=0)
     {
      printf("Review Already Available!\nIf you want to Add a Review Enter 1 else Any other number\n");
-     fflush(stdin);
+    // fflush(stdin);
      scanf("%d",&c);
     }
     else
     {
      printf("Enter review(less than 100 Characters)\n");
-     fflush(stdin);
+    // fflush(stdin);
      gets(m[i].info);
     }
     if(c==1)
     {
      printf("Enter review(less than 100 Characters)\n");
-     fflush(stdin);
+    // fflush(stdin);
      gets(info);
      strcat(m[i].info,"; ");
      strcat(m[i].info,info);
@@ -259,7 +259,7 @@ void KnowInfoAboutMedicine(int number){
    int i,flag=0;
   char name[100];
   printf("Enter Name of the medicine you want to see Review and Info\n");
-  fflush(stdin);
+ // fflush(stdin);
   gets(name);
   for(i=0;i<number;i++)
   {
@@ -288,12 +288,12 @@ void KnowInfoAboutMedicine(int number){
   int id,check,i,quantity,flag=0;
   char name[100];
   printf("Enter 1 if you know ID else any other number to enter Name of Medicine\n");
-  fflush(stdin);
+  //fflush(stdin);
   scanf("%d",&check);
   if(check==1)
   {
    printf("Enter Id to purchase Medicine\n");
-   fflush(stdin);
+  // fflush(stdin);
    scanf("%d",&id);
    for(i=0;i<number;i++)
    {
@@ -312,7 +312,7 @@ void KnowInfoAboutMedicine(int number){
        printf("Medicine Review/Info=%s\n",m[i].info);
       }
      printf("Do you want to purchase %s \nIf Yes Enter 1 else any other number\n",m[i].medicneName);
-     fflush(stdin);
+     //fflush(stdin);
      scanf("%d",&c);
      if(c==1)
      {
@@ -339,7 +339,7 @@ void KnowInfoAboutMedicine(int number){
   else
   {
    printf("Enter Name to search and Purchase\n");
-   fflush(stdin);
+  // fflush(stdin);
    gets(name);
    for(i=0;i<number;i++)
    {
@@ -358,7 +358,7 @@ void KnowInfoAboutMedicine(int number){
        printf("Medicine Review/Info=%s\n",m[i].info);
       }
      printf("Do you want to purchase %s \nIf Yes Enter 1 else any other number\n",m[i].medicneName);
-     fflush(stdin);
+     //fflush(stdin);
      scanf("%d",&c);
      if(c==1)
      {
