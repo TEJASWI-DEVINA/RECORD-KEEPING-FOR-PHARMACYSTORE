@@ -1,19 +1,19 @@
 #ifndef MEDICAL_H_INCLUDED
 #define MEDICAL_H_INCLUDED
 
-void PurchaseMedicine(int number);
-int EnterInfoAboutMedicine(int number);
-int StockOfMedicine(int number);
-void KnowInfoAboutMedicine(int number);
-int DeleteMedicineStore(int number);
-void ChangeMedicineDetails(int number);
-void menu();
+void Purchase(int number);
+int EnterInfo(int number);
+int Stock(int number);
+void KnowInfo(int number);
+int Delete(int number);
+void ChangeDetails(int number);
+void menutab();
 
 struct Medicine{
    int id,price,quantity;
    char medicneName[100],Company[100],Mfg_Date[11],Exp_Date[11],info[5000];
-  }m[100];
-void AddMedicineinStore(int number,struct Medicine m[]);
+  }b[100];
+void Add(int number,struct Medicine b[]);
 
 
 
