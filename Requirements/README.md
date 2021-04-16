@@ -10,9 +10,9 @@ The main objective of this project on the Medical Store Management System is to 
 **EXPLANATION OF FEATURES:**
 
 The main features of this project include:
-●	Proper login system.
-●	Enter the information about the medicine.
-●	Allows knowing the information about the stock of medicine in the store.
-●	Medicine information can be obtained.
-●	Add and Delete medicine records.
-●	Change the quantity of medicine.
+-	Proper login system.
+-	Enter the information about the medicine.
+-	Allows knowing the information about the stock of medicine in the store.
+-	Medicine information can be obtained.
+-	Add and Delete medicine records.
+-	Change the quantity of medicine.
