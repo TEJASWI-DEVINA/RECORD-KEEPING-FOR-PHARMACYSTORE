@@ -70,7 +70,7 @@ void Add(int number,struct Med b[])
   //fflush(stdin);
   printf("Enter Medicine Name\n");
   //fflush(stdin);
-  scanf("%s",name);
+  scanf("%20s",name);
   strcpy(b[number].medicneName,name);
   printf("Enter Company Name\n");
   //fflush(stdin);
@@ -137,7 +137,7 @@ void ChangeDetails(int number)
          char company[100];
          printf("Enter company to be changed\n");
         // fflush(stdin);
-         scanf("%s",company);
+         scanf("%10s",company);
          strcpy(b[i].Company,company);
          printf("Company changed Successfully\n");
         }
@@ -146,7 +146,7 @@ void ChangeDetails(int number)
          char mfg[11];
          printf("Enter Manufacturing date to be changed\n");
          //fflush(stdin);
-         scanf("%s",mfg);
+         scanf("%10s",mfg);
          strcpy(b[i].Mfg_Date,mfg);
          printf("Manufacturing Date changed Successfully\n");
         }
@@ -155,7 +155,7 @@ void ChangeDetails(int number)
          char exp[11];
          printf("Enter Expiry date to be changed\n");
          //fflush(stdin);
-         scanf("%s",exp);
+         scanf("%10s",exp);
          strcpy(b[i].Exp_Date,exp);
          printf("Expiry Date changed Successfully\n");
         }
@@ -164,7 +164,7 @@ void ChangeDetails(int number)
          char info[100];
          printf("Enter Info to be changed(Less than 100 Characters)\n");
         // fflush(stdin);
-         scanf("%s",info);
+         scanf("%90s",info);
          strcpy(b[i].info,info);
          printf("Info changed Successfully\n");
         }
@@ -236,7 +236,7 @@ int Delete(int number)
     {
      printf("Enter review(less than 100 Characters)\n");
     // fflush(stdin);
-     scanf("%s",b[i].info);
+     scanf("%90s",b[i].info);
     }
     if(c==1)
     {
